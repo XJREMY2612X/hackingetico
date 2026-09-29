@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-section">
+    <form method="POST" action="/">
+        <div class="form-group">
+            <label for="titulo">Título de la Vulnerabilidad</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Ej. Inyección SQL en el login" required>
+        </div>
+
+        <div class="form-group">
+            <label for="categoria">Categoría OWASP</label>
+            <select id="categoria" name="categoria">
+                <option value="A01 - Control de Acceso Roto">A01 - Control de Acceso Roto</option>
+                <option value="A02 - Fallos Criptográficos">A02 - Fallos Criptográficos</option>
+                <option value="A03 - Inyección">A03 - Inyección</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="severidad">Severidad</label>
+            <select id="severidad" name="severidad">
+                <option value="Baja">Baja</option>
+                <option value="Media">Media</option>
+                <option value="Alta">Alta</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn-submit">Reportar vulnerabilidad</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Tabla de Vulnerabilidades{% endblock %}
+{% block header_title %}Vulnerabilidades Reportadas{% endblock %}
+{% block header_subtitle %}Listado general de los reportes actuales.{% endblock %}
+
+{% block content %}
+<div class="table-section">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Categoría</th>
+                <th>Severidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vuln in vulnerabilidades %}
+            <tr>
+                <td>{{ vuln.id }}</td>
+                <td>{{ vuln.titulo }}</td>
+                <td>{{ vuln.categoria }}</td>
+                <td>{{ vuln.severidad }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

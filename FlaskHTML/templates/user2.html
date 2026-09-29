@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Perfil de Usuario{% endblock %}
+{% block header_title %}Perfil de Usuario{% endblock %}
+{% block header_subtitle %}Información de la ruta dinámica{% endblock %}
+
+{% block content %}
+    <p style="font-size: 18px; margin: 20px 0;">
+        ¡Hola, <strong>{{ nameHtml }}</strong>! 👋
+    </p>
+
+    <div class="button-group">
+        <a href="/" class="btn btn-blue" style="text-decoration: none;">⬅ Volver al Inicio</a>
+    </div>
+{% endblock %}

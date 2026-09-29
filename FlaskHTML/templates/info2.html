@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Validación de Edad{% endblock %}
+{% block header_title %}Estado de Votación{% endblock %}
+{% block header_subtitle %}Validación para {{ nameHtml }}{% endblock %}
+
+{% block content %}
+    <p style="font-size: 16px; margin-bottom: 12px;">Edad registrada: <strong>{{ ageHtml }} años</strong></p>
+
+    {% if ageHtml|int >= 18 %}
+        <p style="color: #34d399; font-weight: 600; margin-bottom: 20px;">
+            ✅ Eres mayor de edad. Puedes votar.
+        </p>
+    {% else %}
+        <p style="color: #f87171; font-weight: 600; margin-bottom: 20px;">
+            ❌ Eres menor de edad. No eres elegible para votar.
+        </p>
+    {% endif %}
+
+    <div class="button-group">
+        <a href="/" class="btn btn-blue" style="text-decoration: none;">⬅ Volver al Inicio</a>
+    </div>
+{% endblock %}

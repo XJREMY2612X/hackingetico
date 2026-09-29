@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Aplicación Flask{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Contenedor que ahora ocupa toda la pantalla -->
+    <div class="full-screen-container">
+        
+        <!-- Contenedor interno para mantener la información legible -->
+        <div class="inner-content">
+            <header>
+                <span class="badge">Flask App</span>
+                <h1>{% block header_title %}Panel Central{% endblock %}</h1>
+                <p class="subtitle">{% block header_subtitle %}Gestión y rutas dinámicas{% endblock %}</p>
+            </header>
+
+            <main>
+                {% block content %}{% endblock %}
+            </main>
+
+            <div class="divider"></div>
+            <p class="footer-text">Conecta automáticamente con tus rutas en Flask</p>
+        </div>
+
+    </div>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

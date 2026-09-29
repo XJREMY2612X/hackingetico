@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Panel Principal - Flask{% endblock %}
+{% block header_title %}Control de Usuarios{% endblock %}
+{% block header_subtitle %}Ingresa los datos para probar las rutas dinámicas de Flask{% endblock %}
+
+{% block content %}
+    <div class="form-group">
+        <label for="inputName">Nombre del Usuario:</label>
+        <input type="text" id="inputName" placeholder="Ej: Jeremy" value="Jeremy">
+    </div>
+
+    <div class="form-group">
+        <label for="inputAge">Edad:</label>
+        <input type="number" id="inputAge" placeholder="Ej: 22" value="22">
+    </div>
+
+    <div class="button-group">
+        <button type="button" onclick="irAInfo()" class="btn btn-green">
+            <span>🗳️</span> Validar Edad y Voto (/info)
+        </button>
+        <button type="button" onclick="irAUsuario()" class="btn btn-blue">
+            <span>👋</span> Ver Saludo (/user)
+        </button>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function irAInfo() {
+        const name = encodeURIComponent(document.getElementById('inputName').value.trim() || 'Usuario');
+        const age = encodeURIComponent(document.getElementById('inputAge').value.trim() || '18');
+        window.location.href = `/info/${name}/${age}`;
+    }
+
+    function irAUsuario() {
+        const name = encodeURIComponent(document.getElementById('inputName').value.trim() || 'Usuario');
+        window.location.href = `/user/${name}`;
+    }
+</script>
+{% endblock %}

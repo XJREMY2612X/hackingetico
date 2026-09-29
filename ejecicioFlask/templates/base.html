@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Registro de Vulnerabilidades{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="full-screen-container">
+        <div class="inner-content">
+            <header>
+                <h1>{% block header_title %}Registro de Vulnerabilidades{% endblock %}</h1>
+                <p class="subtitle">{% block header_subtitle %}Los datos se guardan temporalmente en una lista de Python.{% endblock %}</p>
+                
+                <!-- Menú de navegación -->
+                <nav class="nav-links">
+                    <a href="/" class="nav-btn">Ingresar Formulario</a>
+                    <a href="/vulnerabilidades" class="nav-btn">Ver Vulnerabilidades</a>
+                </nav>
+            </header>
+
+            <main>
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+    </div>
+</body>
+</html>
